@@ -1,0 +1,10 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: always-restart-pod
+spec: 
+  restartPolicy: Always
+  containers:
+    - name: cont01
+      image: busybox
+      command: ['sh', '-c', 'sleep 10']

@@ -1,0 +1,15 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: nodeselectors
+  labels:                                                   
+    env: dev
+    class: pods
+    department: IT
+spec:
+    containers:
+       - name: c00
+         image: ubuntu
+         command: ["/bin/bash", "-c", "while true; do echo Learning Labels & Selector; sleep 5 ; done"] 
+    nodeSelector: 
+      type: t2.medium

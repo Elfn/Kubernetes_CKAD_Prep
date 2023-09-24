@@ -1,0 +1,10 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: onfailure-restart-pod
+spec: 
+  restartPolicy: OnFailure
+  containers:
+    - name: cont02
+      image: busybox
+      command: ['sh', '-c', 'sleep 10; bad command']

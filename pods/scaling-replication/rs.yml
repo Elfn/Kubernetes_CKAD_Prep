@@ -1,0 +1,19 @@
+kind: ReplicaSet
+apiVersion: apps/v1
+metadata:
+  name: repset
+spec: 
+  replicas: 3
+  selector:
+    matchExpressions:
+      - {key: env, operator: In, values: [test,prod,preprod]}
+  template:
+    metadata:
+      name: rspod
+      labels: 
+        env: prod
+    spec:
+     containers:
+        - name: c04
+          image: ubuntu
+          command: ["/bin/bash", "-c", "while true; do echo Learning ReplicaSet; sleep 5 ; done"] 

@@ -1,0 +1,12 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod1
+  annotations:
+    description: This my first pod by Elimane Fofana
+spec:
+  containers:
+    - name: cont1
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo Hello How are you; sleep 5 ; done"]
+  restartPolicy: Never         # Defaults to Always

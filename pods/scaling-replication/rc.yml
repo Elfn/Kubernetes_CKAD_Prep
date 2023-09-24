@@ -1,0 +1,18 @@
+kind: ReplicationController
+apiVersion: v1
+metadata:
+  name: replica
+spec: 
+  replicas: 3
+  selector:
+    name: rctest
+  template:
+    metadata:
+      name: rcpod
+      labels: 
+        name: rctest
+    spec:
+     containers:
+        - name: c00
+          image: ubuntu
+          command: ["/bin/bash", "-c", "while true; do echo Learning Labels & Selector; sleep 5 ; done"] 

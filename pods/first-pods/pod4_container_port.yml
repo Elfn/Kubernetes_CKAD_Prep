@@ -1,0 +1,12 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod4
+  annotations:
+    description: This is a container containing port 
+spec:
+  containers:
+    - name: cont1
+      image: httpd # Apache image
+      ports: 
+        - containerPort: 80

@@ -1,0 +1,10 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: never-restart-pod
+spec: 
+  restartPolicy: Never
+  containers:
+    - name: cont02
+      image: busybox
+      command: ['sh', '-c', 'sleep 10; bad command']

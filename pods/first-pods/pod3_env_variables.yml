@@ -1,0 +1,19 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: envvar
+spec:
+  containers:
+    - name: cont1
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo Container 1; sleep 5 ; done"]
+      env: 
+        - name: myName
+          value: Fofana
+    - name: cont2
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo Container 2; sleep 5 ; done"]
+      env: 
+        - name: city
+          value: Lyon
+  restartPolicy: Never         # Defaults to Always

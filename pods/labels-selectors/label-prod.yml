@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: labelpodprod
+  labels:                                                   
+    env: prod
+    class: pods
+    department: IT
+spec:
+    containers:
+       - name: c00
+         image: ubuntu
+         command: ["/bin/bash", "-c", "while true; do echo Learning Labels & Selector; sleep 5 ; done"]
