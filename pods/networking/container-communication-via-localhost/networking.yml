@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: testpod
+spec:
+  containers:
+    - name: c00
+      image: elfn/ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo Learning NETWORKING; sleep 5 ; done"]
+    - name: c01
+      image: elfn/apache
+      ports:
+       - containerPort: 80

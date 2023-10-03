@@ -10,6 +10,7 @@ Update the system
 Now install docker
 
 # apt -y install docker.io
+# systemctl status docker
 
 Download & Install Kubectl
 
